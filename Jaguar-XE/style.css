@@ -50,6 +50,8 @@ body{
     text-align: left;
 }
 
+/*Button style*/
+
 .button {
    
     background-color: #DB3030;
@@ -58,19 +60,11 @@ body{
     margin-bottom: 10px;
     border: none;
     height: 40px;
+    font-weight:bold ;
+    color: white;
     
 }
 
-#link {    
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-        
+input:hover{
+    cursor: pointer;
 }
-
-
-
-
-
-
-
