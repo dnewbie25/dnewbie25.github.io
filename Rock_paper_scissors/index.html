@@ -7,13 +7,54 @@
 <body>
     <script>
         let computerChoice = ["Rock", "Paper", "Scissors"];
+        let playerChoice = prompt("Enter a value:");
+        let win_lose;
 
-        function computerPlay(){
+        let playerSelection = playerChoice.toLowerCase(); 
+        console.log(playerSelection);
+
+        let x;
+
+        if(playerSelection === "rock"){
+            x = 0;
+        }else if(playerSelection === "paper"){
+            x = 1;
+        }else if(playerSelection === "scissors"){
+            x = 3;
+        }else{
+            console.log("Try again");
+        }
+
+        console.log(x);
+
+
+
+        function computerSelection(){
             let computerSelect = Math.floor(Math.random()*3);
             return computerChoice[computerSelect];
         }
 
-        computerPlay();
+
+         function computerPlay(computerSelection){
+            if(computerSelection === "Rock"){
+                return 0;
+            }else if(computerSelection === "Paper"){
+                return 1;
+            }else{
+                return 2;
+            }
+
+         }
+
+
+        //console.log(computerSelection());
+
+        
+
+        
+            
+
+           
 
 
     </script>
