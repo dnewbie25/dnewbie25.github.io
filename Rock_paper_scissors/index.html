@@ -8,37 +8,40 @@
     <script>
         let computerChoice = ["Rock", "Paper", "Scissors"];
         let playerChoice = prompt("Enter a value:");
-        let win_lose;
+        //let win_lose;
 
         let playerSelection = playerChoice.toLowerCase(); 
         console.log(playerSelection);
 
-        let x;
+        
 
         if(playerSelection === "rock"){
-            x = 0;
+            playerSelection = 0;
         }else if(playerSelection === "paper"){
-            x = 1;
+            playerSelection = 1;
         }else if(playerSelection === "scissors"){
-            x = 3;
+            playerSelection = 3;
         }else{
             console.log("Try again");
         }
 
-        console.log(x);
+        console.log("PlayeSElection = "+playerSelection);
 
 
 
-        function computerSelection(){
-            let computerSelect = Math.floor(Math.random()*3);
-            return computerChoice[computerSelect];
-        }
+        /*function computerSelection(){
+            let computerSelect = Math.floor(Math.random()*computerChoice.length);
+            return computerSelect;
+        }*/
 
 
-         function computerPlay(computerSelection){
-            if(computerSelection === "Rock"){
+
+         function computerPlay(){
+
+            let computerSelect = computerChoice[Math.floor(Math.random()*computerChoice.length)];
+            if(computerSelect === "Rock"){
                 return 0;
-            }else if(computerSelection === "Paper"){
+            }else if(computerSelect === "Paper"){
                 return 1;
             }else{
                 return 2;
@@ -47,11 +50,48 @@
          }
 
 
-        //console.log(computerSelection());
+        //console.log("computerSelection = "+computerSelection());
+        console.log("computerPlay = "+computerPlay());
 
-        
+        function playRound(playerSelection,computer){
 
-        
+            if(playerSelection === 0){//If playerSelection equals Rock
+                if(computer === 0){
+                    return "It is a tie";
+                }else if(computer === 1){
+                    return "YOu lose";
+                }else{
+                    return "You win";
+                }
+
+            }else if(playerSelection === 1){//If playerSelection equals Paper
+                if(computer === 0){
+                    return "You win";
+                }else if(computer === 1){
+                    return "A tie";
+                }else{
+                    return "You lose";
+                }
+            }else{//if platerSelection equals Scissors
+                if(computer === 0){
+                    return "You lose";
+                }else if(computer === 1){
+                    return "YOu win";
+                }else{
+                    return "A tie";
+                }
+            }
+
+         }
+
+         //computerSelection();
+         let computer = computerPlay();
+        computerPlay();
+        playRound();
+
+        console.log("computer = "+computer);
+
+        console.log(playRound(playerSelection,computer));
             
 
            
