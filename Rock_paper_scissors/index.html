@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
+    <meta charset="utf-8"/>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script>
-        
+        let computerChoice = ["Rock", "Paper", "Scissors"];
+
+        function computerPlay(){
+            let computerSelect = Math.floor(Math.random()*3);
+            return computerChoice[computerSelect];
+        }
+
+        computerPlay();
+
+
     </script>
 
 </body>
