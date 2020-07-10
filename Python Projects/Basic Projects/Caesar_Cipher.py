@@ -25,9 +25,15 @@ class CaesarCipher:
     list_from_string = self.split_phrase()
     for each_letter in list_from_string:
       if each_letter in lower_alphabet:
-        self.new_phrase.append(lower_alphabet[lower_alphabet.index(each_letter) + self.shift])
+        try:
+          self.new_phrase.append(lower_alphabet[lower_alphabet.index(each_letter) + self.shift])
+        except IndexError:
+          self.new_phrase.append(lower_alphabet[lower_alphabet.index(each_letter) + self.shift-len(upper_alphabet)])
       elif each_letter in upper_alphabet:
-        self.new_phrase.append(upper_alphabet[upper_alphabet.index(each_letter) + self.shift])
+        try:
+          self.new_phrase.append(upper_alphabet[upper_alphabet.index(each_letter) + self.shift])
+        except IndexError:
+          self.new_phrase.append(upper_alphabet[upper_alphabet.index(each_letter) + self.shift-len(upper_alphabet)])
       else: 
         self.new_phrase.append(each_letter)
     
@@ -39,7 +45,7 @@ class CaesarCipher:
     return self.new_string.join(ciphered_list)
 
 
-test = CaesarCipher('Hello World!', 3)
+test = CaesarCipher('Hello WorldY!', 3)
 
 print(test.join_phrase())
 
