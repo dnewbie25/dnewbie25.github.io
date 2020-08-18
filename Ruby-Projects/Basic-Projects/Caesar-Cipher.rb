@@ -69,6 +69,6 @@ new_phrase = puts ciphered_phrase.join('')
 puts new_phrase
 
 
-# NOw add the decipher code
+# Now add the decipher code
 
 
