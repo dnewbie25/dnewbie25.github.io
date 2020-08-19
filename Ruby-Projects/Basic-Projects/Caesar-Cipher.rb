@@ -17,12 +17,10 @@ puts "Enter the shifts you want"
 shifts = gets.chomp.to_i
 
 # Split the phrase into an array with all characters
-require 'pry'
 
 phrase_characters_array = phrase.split('')
 
 # loops through the phrase_characters_array
-binding.pry
 
 phrase_characters_array.each do |character|
 
