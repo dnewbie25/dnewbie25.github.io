@@ -101,7 +101,7 @@ phrase_characters_array.each do |character|
   if lower_alphabet.include?(character)
     character_index = lower_alphabet.index(character) # gets the index value
 
-    if character_index - shifts < 0 # because the decipher is the same but backwards, it evaluates if the index - shift is less than zero
+    if character_index - shifts < 0 # because the decipher is the same but backwards, it evaluates if the index - shift is less than zero. Remeber that arrays backwards starts at -1 so negative numbers will be -1 = z, -2=x and so on
       substraction = character_index - shifts
       
       ciphered_phrase.push(lower_alphabet[substraction])
