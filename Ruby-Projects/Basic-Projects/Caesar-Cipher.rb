@@ -104,11 +104,8 @@ phrase_characters_array.each do |character|
     if character_index - shifts < 0 # because the decipher is the same but backwards, it evaluates if the index - shift is less than zero
       substraction = character_index - shifts
       
-      if substraction >= 0
-        ciphered_phrase.push(lower_alphabet[substraction])
-      else
-        ciphered_phrase.push(lower_alphabet[substraction])
-      end
+      ciphered_phrase.push(lower_alphabet[substraction])
+      
 
     else
       new_character = lower_alphabet[character_index - shifts] # reverts the operation
@@ -122,11 +119,8 @@ phrase_characters_array.each do |character|
     if character_index - shifts < 0
       substraction = character_index - shifts
 
-      if substraction >= 0
-        ciphered_phrase.push(upper_alphabet[substraction])
-      else
-        ciphered_phrase.push(upper_alphabet[substraction])
-      end
+      ciphered_phrase.push(upper_alphabet[substraction])
+      
 
     else
       new_character = upper_alphabet[character_index - shifts]
