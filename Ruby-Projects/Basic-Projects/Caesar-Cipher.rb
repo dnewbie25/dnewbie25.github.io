@@ -32,10 +32,10 @@ phrase_characters_array.each do |character|
   if lower_alphabet.include?(character)
     character_index = lower_alphabet.index(character) # gets the index value
 
-    if character_index + shifts > lower_alphabet.length # if it's greater than the alphaber's length
+    if character_index + shifts >= lower_alphabet.length # if it's greater than the alphaber's length
       sum = character_index + shifts
 
-      result_of_index_substraction = sum - lower_alphabet.length
+      result_of_index_substraction = sum % lower_alphabet.length
 
       ciphered_phrase.push(lower_alphabet[result_of_index_substraction])
 
@@ -48,10 +48,10 @@ phrase_characters_array.each do |character|
   elsif upper_alphabet.include?(character)
     character_index = upper_alphabet.index(character) # gets the index value
 
-    if character_index + shifts > upper_alphabet.length
+    if character_index + shifts >= upper_alphabet.length
       sum = character_index + shifts
 
-      result_of_index_substraction = sum - upper_alphabet.length
+      result_of_index_substraction = sum % upper_alphabet.length
 
       ciphered_phrase.push(upper_alphabet[result_of_index_substraction])
 
@@ -103,9 +103,12 @@ phrase_characters_array.each do |character|
 
     if character_index - shifts < 0 # because the decipher is the same but backwards, it evaluates if the index - shift is less than zero
       substraction = character_index - shifts
-
       
-      ciphered_phrase.push(lower_alphabet[substraction])
+      if substraction >= 0
+        ciphered_phrase.push(lower_alphabet[substraction])
+      else
+        ciphered_phrase.push(lower_alphabet[substraction])
+      end
 
     else
       new_character = lower_alphabet[character_index - shifts] # reverts the operation
@@ -119,8 +122,11 @@ phrase_characters_array.each do |character|
     if character_index - shifts < 0
       substraction = character_index - shifts
 
-      
-      ciphered_phrase.push(upper_alphabet[substraction])
+      if substraction >= 0
+        ciphered_phrase.push(upper_alphabet[substraction])
+      else
+        ciphered_phrase.push(upper_alphabet[substraction])
+      end
 
     else
       new_character = upper_alphabet[character_index - shifts]
