@@ -63,4 +63,23 @@ board_test.update_board("C2")
 board_test.show_board
 # Class for players
 
+class Player < BoardUpdate
+  def
+  end
+end
+
 # Class to determine the winner or a tie
+
+=begin
+  
+Primero necesito una clase que controle el tablero, otra a los jugadores y otra que determine el ganador
+
+La clase tablero tiene que ser heredada por los jugadores para poder actualizar el board. Deben haber 2 jugadores
+
+La clase jugador debe poder ver el tablero, hacer un movimiento  ver el resultado en un tablero actualizado
+
+Esto anterior para ambos jugadores, los cuales serían instancias de la clase Player.
+
+Las jugadas deben ser privadas pero el tablero público para que pueda verse. EL tablero creo que debe ser una class variable. 
+  
+=end
