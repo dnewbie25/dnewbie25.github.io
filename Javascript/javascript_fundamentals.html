@@ -14,6 +14,27 @@
                   "no one cares";
     
     console.log(message)
+
+    /* do loop is used when you want the block to be executed at least once
+    let num;
+
+    do{
+      num = Number(prompt("enter a number"))
+    } while ( num != 100)
+    */
+
+    // prime numbers until n number
+
+    let n = Number(prompt("Enter a number to search primes"))
+
+    nextPrime: 
+    for (let i = 2; i<=n; i++){
+      for (let j = 2; j < i; j++){
+        if (i%j == 0) continue nextPrime;
+      }
+      console.log(i)
+    }
+    
   </script>
 </body>
 </html>
