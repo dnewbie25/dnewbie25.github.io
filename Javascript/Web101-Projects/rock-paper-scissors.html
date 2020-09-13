@@ -8,6 +8,91 @@
 <body>
   <script>
     "use strict";
+    // Computer random move
+    function computerPlay(){
+      let random_number = Math.floor(Math.random() * (3 - 0) + 0); // return between [1, 4) inclusive-exclusive
+
+      if (random_number == 0){
+        return "rock";
+      }else if (random_number == 1){
+        return "paper";
+      }else{
+        return "scissors";
+      }
+    }
+
+    // Player move
+
+    function playerMovement(){
+      let player_input = prompt("Choose either (r)ock, (p)aper, (scissors) or (q)uit")
+
+      player_input = player_input.toLowerCase();
+
+      if (player_input == "r"){
+        return "rock";
+      }else if (player_input == "p"){
+        return "paper"
+      }else if (player_input == "s"){
+        return "scissors"
+      }else{
+        throw new Error("You stopped the program");//this stops the game
+      }
+    }
+
+    // One single round of rock paper scissors
+    function singleRound(playerSelection, computerSelection){
+      // player chooses ROCK
+      if (playerSelection == "r"){
+        switch (computerSelection){
+          case "r": 
+            console.log("It's a tie");
+            return 0;
+            break;
+          case "p": 
+            console.log("You loose! Paper beats Rock");
+            return 1;
+            break;
+          case "s": 
+            console.log("You win! Rock beats Scissors")
+            return 2;
+            break;
+        }
+      // Player chooses PAPER
+      }else if (playerSelection == "p"){
+        switch (computerSelection){
+          case "p": 
+            console.log("It's a tie");
+            return 0;
+            break;
+          case "s": 
+            console.log("You loose! Scissors beat Paper");
+            return 1;
+            break;
+          case "r": 
+            console.log("You win! Paper beats Rock")
+            return 2;
+            break;
+        }
+      // Player chooses SCISSORS
+      }else{
+        switch (computerSelection){
+          case "s": 
+            console.log("It's a tie");
+            return 0;
+            break;
+          case "r": 
+            console.log("You loose! Rock beats Scissors");
+            return 1;
+            break;
+          case "p": 
+            console.log("You win! Scissors beat Paper")
+            return 2;
+            break;
+        }
+      }
+    }
+
+
   </script>
 </body>
 </html>
