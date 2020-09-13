@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions in Javascript</title>
+</head>
+<body>
+  <script>
+    /*
+    A function with an empty return or without a return statement returns "undefined"
+
+    function doNothing() {
+      return;
+    }
+
+    alert( doNothing() === undefined ); // true
+
+    -----------------------------------------------
+
+    function doNothing() { -- empty -- }
+
+    alert( doNothing() === undefined ); // true
+    
+    */
+
+    // A funtcion DECLARATION looks like this:
+
+    function name(parameters, delimited, by, comma) {
+      /* code */
+    }
+
+    // rewrite using || the following function
+    /*
+    function checkAge(age) {
+      if (age > 18) {
+        return true;
+      }else {
+        return confirm('Did parents allow you?');
+      }
+    }
+    */
+
+    function checkAge(age) {
+      return (age > 18) || confirm('Did parents allow you?');
+    }
+
+    function min(a, b) {
+      return (a > b) ? b : 
+             (b > a) ? a: 
+             "a = b";
+    }
+
+    // A function EXPRESSION looks like this:
+
+    let sayHi =  function (parameters, here){
+      /* code */
+      alert("Hello World!");
+    }
+
+    // Call Back functions
+
+    function ask(question, yes, no){
+      if (confirm(question)){
+        yes();
+      }else{
+        no();
+      }
+    }
+
+    function showOk(){
+      alert("You agreed!");
+    }
+
+    function showCancel(){
+      alert("You canceled the execution");
+    }
+
+    ask("Do you like pizza?", showOk, showCancel); //don't put parenthesis, othwersie they will execute separately
+      
+  </script>
+</body>
+</html>

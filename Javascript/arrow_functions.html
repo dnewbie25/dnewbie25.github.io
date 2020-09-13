@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Functions</title>
+</head>
+<body>
+  <script>
+    // There is another way of creating function expressions
+
+    let func = (arg1, arg2, arg3) => alert("Code to execute"); // this create a function func that alerts "Code to execute"
+
+    // In other words, it's basically the shorter version of
+
+    let func2 = function(arg1, arg2, arg3){
+      alert("Code to execute 2"); 
+    }
+
+    // example with function Expression and arrow function
+
+    let sum = function(a, b){
+      return a + b;
+    }
+
+    let sumArrow = (a, b) => a + b; // no explicit return needed
+
+    alert(sumArrow(2,2)); // 4
+
+    // another function as an arrow function
+
+    /*
+      function ask(question, yes, no) {
+        if (confirm(question)) yes()
+      else no();
+      }
+
+      ask(
+        "Do you agree?",
+        function() { alert("You agreed."); },
+        function() { alert("You canceled the execution."); }
+      );
+    
+    */
+
+
+    let ask = (question, yes, no) => {
+      return (confirm(question)) ? yes() : no();
+    }
+
+    ask(
+      "Do you want pizza?",
+      () => alert("You agreed."), // arrow function can have zero parameters, this is how you declare it
+      () => alert("You canceled the execution.")
+    );
+  </script>
+</body>
+</html>
