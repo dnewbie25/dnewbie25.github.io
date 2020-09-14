@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays</title>
+</head>
+<body>
+  <script>
+    /*ARRAY METHODS:
+
+      toString() 
+          converts an array to a string separating item by a comma ,
+
+      join()
+          join elements into a string, you can define the separator array.join(' - ')
+
+      pop()
+          removes the last element of the array. You can save that element in a variable
+          let x = array.pop()  -->> x = last element of the array, but the array won't have that element anymore
+
+      push()
+          adds an element at the end of the array. Can add multiple elements
+
+      shift()
+          removes the first element of the array; you can also save that element in a variable
+          let y = array.shift()  -->> y = first element, but the array won't have it anymore
+
+      unshift()
+          adds a new element at the beginnings. Can add multiple elements
+
+      delete
+          you can delete elements by its index using: delete array[index]
+          delete will leave an empty index which is 'undefined', try to use pop() or shift() instead
+      
+      splice()
+          adds new items at x index.
+          fruits = ["Banana", "Orange", "Apple", "Mango"]
+          fruits.splice(2, 0, "Lemon", "Kiwi")
+
+          fruits = ["Banana", "Orange", "Lemon", "Kiwi", "Apple", "Mango"]
+
+          splice(position, parametersToRemove, items, to, add)
+
+          splice() can be used to delete items without leaving holes like 'delete'
+          fruits.splice(0, 1) -->> at index zero, delete 1 item, which removes the first element like shift()
+
+      concat()
+          creates a new array by merging existing arrays
+          var myGirls = ["Cecilie", "Lone"];
+          var myBoys = ["Emil", "Tobias"];
+          var myChildren = myGirls.concat(myBoys); -->> ["Cecilie", "Lone", "Emil", "Tobias"]
+
+          you can concatenate multiple arrays
+          let finalArray = arr1.concat(arr2, arr3, arr4);
+
+          you can even add strings array.concat("Peter"); this will act like push()
+      
+
+      
+    */
+  </script>
+</body>
+</html>
