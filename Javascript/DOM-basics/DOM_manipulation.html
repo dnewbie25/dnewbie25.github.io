@@ -9,6 +9,18 @@
   <h1>The title of my webpage</h1>
   <div id="container"></div>
 
+  <!--Buttons-->
+  <!--Method 1: Not ideal because we are putting javascript inside the HTML body-->
+  <button onclick="alert('Hello World')">Click Me</button>
+
+  <!--Method 2-->
+  <button id="btn">Click Me 2</button>
+
+  <!--Method 3-->
+  <button id="btn2">Click Me 3</button>
+
+  <!--Method 1 again-->
+  <button id="btn3">CLICK ME MAN</button>
 
   <script>
     const container = document.querySelector("#container");
@@ -45,7 +57,42 @@
     paragraph2.textContent = "Me too!!";
     container2.appendChild(paragraph2);
 
+    // btn id button
+    const btn = document.querySelector("#btn");
+    btn.onclick = () => alert("Hello World"); // we create an arrow function for that button. This method is good but the DOM element will have only one onclick property
 
+    // btn2 id button
+
+    const btn2 = document.querySelector("#btn2");
+
+    btn2.addEventListener("click", () => {
+      alert("Hello World");
+    })
+
+    //Method 1 again
+
+    function alertFunction(){
+      alert("Oh yeah bro!!");
+    }
+
+    // method 2
+
+    btn3.onclick = alertFunction;
+
+    // method 3
+
+    //btn3.addEventListener("click", alertFunction);
+
+    // callback from addEventListener
+
+    /*
+    btn3.addEventListener("click", function(e) {
+      console.log(e);
+    })
+    */
+    btn.addEventListener('click', function (e) {
+      e.target.style.background = 'blue';
+    });
 
   </script>
 </body>
