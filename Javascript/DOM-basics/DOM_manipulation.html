@@ -8,14 +8,45 @@
 <body>
   <h1>The title of my webpage</h1>
   <div id="container"></div>
+
+
   <script>
     const container = document.querySelector("#container");
 
     const content = document.createElement("div");
     content.classList.add("content");
     content.textContent = "This is the glorious text-content!";
-
     container.appendChild(content);
+
+    const paragraph = document.createElement("p");
+    paragraph.classList.add("P-tag");
+    paragraph.textContent = "Hey I'm red!!";
+    paragraph.style.color = "red";
+    container.appendChild(paragraph);
+
+    const heading3 = document.createElement("h3");
+    heading3.classList.add("H3-tag");
+    heading3.textContent = "I'm blueee!!";
+    heading3.style.color = "blue";
+    container.appendChild(heading3);
+
+    const container2 = document.createElement("div");
+    container2.style.borderColor = "black";
+    container2.style.backgroundColor = "pink";
+    container.appendChild(container2);
+
+    const heading1 = document.createElement("h1");
+    heading1.classList.add("H1-tag");
+    heading1.textContent = "I'm in a div";
+    container2.appendChild(heading1);
+
+    const paragraph2 = document.createElement("p");
+    paragraph.classList.add("P2-tag");
+    paragraph2.textContent = "Me too!!";
+    container2.appendChild(paragraph2);
+
+
+
   </script>
 </body>
 </html>
