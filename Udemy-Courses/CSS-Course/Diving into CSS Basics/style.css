@@ -32,6 +32,21 @@ body {
   margin: 20px;
 }
 
+.main-header > div {
+  display: inline-block;
+}
+
+.main-nav {
+  display: inline-block;
+  text-align: right;
+  width: calc(100% - 50px);
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+}
+
 .main-nav__item {
-  display: inline;
+  display: inline-block;
 }
