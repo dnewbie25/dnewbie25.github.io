@@ -1,0 +1,32 @@
+.second-li code {
+  color: blueviolet;
+}
+
+#assignment-instructions {
+  color: brown;
+  font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+ol code {
+  font-family: monospace;
+  color: red;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5em;
+}
+
+/*
+ol li:not(:first-child) {
+  background-color: black !important;
+  color: white !important;
+}
+*/
+
+li + li {
+  background-color: black !important;
+  color: white !important;
+}
+
+
