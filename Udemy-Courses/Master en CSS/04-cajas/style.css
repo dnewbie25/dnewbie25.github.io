@@ -2,24 +2,38 @@
   margin: 0;
   padding: 0;
 }
+body {
+  padding: 20px;
+}
 
-#caja1,
-#caja2 {
+#cajas {
+  max-width: 1035px;
+  border: 1px solid black;
+}
+
+.caja {
+  display: block;
   width: 250px;
   height: 250px;
   background-color: lightblue;
   border: 5px solid red;
   margin: 15px;
   padding-left: 25px;
+  float: left;
 }
 
 #caja2 {
   background-color: lightgreen;
 }
 
-p {
+.caja p {
   font-weight: bold;
   text-align: center;
   font-size: 20px;
   line-height: 230px;
+}
+
+.clearfix {
+  float: none;
+  clear: both;
 }
