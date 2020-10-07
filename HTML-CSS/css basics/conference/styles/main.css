@@ -61,6 +61,11 @@ table {
           box-sizing: border-box;
 }
 
+/*This one allows you to see all boxes in a red outline*/
+* {
+  border: 1px solid red !important;
+}
+
 .container {
   margin: 0 auto;
   padding-left: 30px;
