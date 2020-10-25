@@ -21,13 +21,12 @@
   display: flex;
   flex-direction: row;
   margin-top: 5px;
+  text-align:center; /*this center everything*/
 }
 
-.header-item .logo-manu-images{
+.header-item{
   justify-items: space-between;
-  flex-basis: 7%;
-  margin-right: 10px;
-  width: 100%;
+  
 }
 
 .header-item .form-header {
