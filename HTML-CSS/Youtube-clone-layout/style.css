@@ -20,31 +20,26 @@
   grid-column-start: 1/3;
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
+  margin-top: 15px;
   text-align:center; /*this center everything*/
 }
 
-.header-item{
-  justify-items: space-between;
-  
-}
-
 .header-item .form-header {
-  flex-basis: 93%;
+  flex-basis: 90%;
   justify-self: flex-end;
 }
 
-.youtube-search-bar label input{
-  
+.youtube-search-bar label input{ 
   width: 55%;
-  
+  height: 2rem;
 }
 
 input[type="submit"] {
   width: 100px;
+  height: 2rem;
 }
 
-
+/*Video position in the grid*/
 .video-player-item {
   grid-area: 'video';
   grid-row: 2/3;
