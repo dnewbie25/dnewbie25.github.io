@@ -1,0 +1,39 @@
+// Function Declaration
+function greet(){
+  console.log("Hello World!");
+}
+
+// Function Expression
+
+const speak = function(){
+  console.log("Speaking to this world!!");
+}
+
+greet();
+speak();
+
+// Arguments & Parameters
+
+const speak2 = function(time, name = 'luigi'){
+  console.log(`Good ${time}, ${name}`);
+}
+
+speak2("night");
+speak2("morning", "Diana");
+
+// Returning Values
+
+let calcArea = function(radius) {
+  let area = 3.14 * radius**2;
+  return area;
+}
+
+const area = calcArea(2);
+
+let volumeSphere = function(radius) {
+  let volume = (4/3) * 3.14 * radius**3;
+  return volume;
+}
+
+console.log(area);
+console.log(volumeSphere(2));
