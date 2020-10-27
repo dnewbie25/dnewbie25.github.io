@@ -37,3 +37,17 @@ let volumeSphere = function(radius) {
 
 console.log(area);
 console.log(volumeSphere(2));
+
+// Arrow Function
+
+const calcArea2 = (radius) => {
+  return 3.14 * radius**2;
+};
+
+console.log(calcArea2(3));
+
+// Another arrow function
+
+let myAge = birthYear => {return 2020 - birthYear};
+
+console.log(myAge(1997));
