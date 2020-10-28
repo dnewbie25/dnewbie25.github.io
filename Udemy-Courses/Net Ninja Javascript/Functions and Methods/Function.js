@@ -53,3 +53,6 @@ let myAge = birthYear => {return 2020 - birthYear};
 console.log(myAge(1997));
 
 // Callbacks and forEach method
+
+/* Callback is when you pass a function as an argument to another function */
+

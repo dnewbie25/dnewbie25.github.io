@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops</title>
+</head>
+<body>
+  <script>
+    // While Loop
+
+    let i = 0;
+
+    while (i<5) {
+      console.log(i);
+      i++;
+    }
+
+    // Do while 
+    /* The same as the while loop, the difference is that do/while execute the code ONCE before checking the condition */
+
+    let x = 0;
+
+    do {
+      console.log(`Do while: ${x}`);
+      x--;
+    } while (x>0); //here the code gets executed beforfe checking the condition
+
+    // for loop
+    let array = ["one", "two", "three"];
+
+    for (let i = 0; i < array.length; i++) {
+      console.log(`Item ${i+1} in the array is "${array[i]}"`);
+    }
+    
+    // break & continue
+
+    /* With break and continue you can exit the loop or jump to the next iteration once a certain condition is true */
+
+    let sum = 0;
+
+    while (sum < 100) {
+
+      sum++;
+      if (sum%2 == 0) continue;
+      console.log(`The sum is: ${sum}`);
+
+    }
+
+
+    // Labels for break/continue
+
+    /* If you have this code, you want to continue to the next iteration of the i loop
+    
+      for (let x = 0; x < 3; x++){
+
+        for (let y = 0; y < 3; y++){
+          let input = prompt(`Value at coordenates (${x},${y})`);
+        }
+
+      }
+
+      alert("Done!!");
+
+      In such case we'll use a Label
+    
+    */
+
+    outer: for (let x = 0; x < 3; x++){
+
+      for (let y = 0; y < 3; y++){
+        let input = prompt(`Value at coordenates (${x},${y})`);
+
+        /*If an empty string or canceled, then break out both loops (finish the current one and searches for the outer loop to stop it too)*/ 
+
+        if (!input) break outer;
+      }
+    }
+
+    alert("Done!!");
+
+    outer: for (let x = 0; x < 3; x++){
+
+/* ----Small experiment with labels, here I nested outer and outer1
+
+for (let y = 0; y < 3; y++){
+  outer1: for (let i = 0; i<3;i++){
+    for (let j= 0; j<3;j++){
+      let input = prompt(`Value at coordenates (${x},${y})`);
+
+      //If an empty string or canceled, then break out both loops (finish the current one and searches for the outer loop to stop it too) 
+
+      if (!input) break outer;
+    }
+  }
+}
+
+  alert("Done outer 1");
+}
+
+alert("Done main outer"); */
+
+
+
+  </script>
+</body>
+</html>
