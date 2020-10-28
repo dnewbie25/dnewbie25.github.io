@@ -51,3 +51,5 @@ console.log(calcArea2(3));
 let myAge = birthYear => {return 2020 - birthYear};
 
 console.log(myAge(1997));
+
+// Callbacks and forEach method
