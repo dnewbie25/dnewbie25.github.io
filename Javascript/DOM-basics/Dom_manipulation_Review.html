@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation - Quick Review</title>
+</head>
+<body>
+
+  <div class="container"><!--Parent element-->
+    <div class="display"></div><!--container's Child-->
+    <div class="second-child"></div>
+    <div id="controls"></div><!--container's Child-->
+  </div>
+
+  <script>
+    /* You target nodes with selectors. For example */
+
+    const container = document.querySelector(".container"); // selects the container class
+
+    console.dir(container.firstElementChild); // selects the first direct child of .container, which is .display
+
+    const controls = document.querySelector("#controls"); //selects the #controls id
+
+    console.dir(controls.previousElementSibling); // selects the prios sibling, in this case .second-child
+
+    /*============= 
+    DOM METHODS 
+    ===============*/
+
+    // Quick reminder
+
+    const example1 = document.querySelector(".display"); //selects the FIRST node
+    const example2 = document.querySelectorAll(".display"); //selects all the nodes with that selector attribute
+
+    //Element Creation - Let's create a <div> node
+
+    const div = document.createElement("div"); //creates a div tag, but it doesn't put it into  the DOM yet, we need to append it
+
+    //Append Element
+
+    controls.appendChild(div); //appends div as a child of .controls
+
+    //controls.insertBefore(newNode, referenceNode); -->> puts the element (newNode) before the referenceNode
+
+    console.dir(controls.firstElementChild); //shows it on console
+
+    //Remove Element
+
+    container.removeChild(controls); //will remove the .controls element, becaise it's the child of .container
+
+    
+
+
+  </script>
+</body>
+</html>
