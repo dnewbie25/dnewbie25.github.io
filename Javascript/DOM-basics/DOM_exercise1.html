@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercise 1</title>
+</head>
+<body>
+  <h1>
+    THE TITLE OF YOUR WEBPAGE
+  </h1>
+  <div id="container">
+  	<div class="content">
+      This is the glorious text-content!
+    </div>
+  </div>
+
+  <!--Script for DOM manipulation-->
+
+  <script>
+    const container = document.querySelector("#container");
+
+    const content = document.querySelector(".content");
+
+    // p element creation & style
+    const p = document.createElement("p");
+    p.textContent = "Hey, I'm a red <p>!";
+    content.appendChild(p);
+    p.style.background = "red";
+
+    //h3 element creation and style
+    const h3 = document.createElement("h3");
+    h3.textContent = "Hey, I'm a blueee <h3>!";
+    content.appendChild(h3);
+    h3.style.background = "blue";
+
+    //div with class .new-div and with elements inside it
+    const new_div = document.createElement("div");
+    new_div.classList.add("new-div-class");
+    new_div.style.borderColor = "black";
+    new_div.style.backgroundColor = "pink"
+    
+    
+    // h1 for .new-div
+    const h1 = document.createElement("h1");
+    h1.textContent = "I'm a <h1> element!";
+    new_div.appendChild(h1);
+
+    //new p for .new-div
+    const p2 = document.createElement("p");
+    p2.textContent = "ME TOO, I'm a <p>";
+    new_div.appendChild(p2);    
+    
+    container.appendChild(new_div);
+  </script>
+</body>
+</html>
