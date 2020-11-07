@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    //How to create an object, also known as Hash
+
+    let user = new Object();
+    let user2 = {}; 
+
+    //each key:value is known as a property
+    user = {
+      name: "John",
+      age: 30,
+      life: 33, //try to leave a comma at the end of all properties, even the last one, so it becomes easier to add, modify or remove them
+    };
+
+    alert(user.name); //John
+
+    //Delete key:values properties
+
+    delete user.life
+
+    //You can add properties and multiword properties
+
+    user2 = {
+      name: "Sofia",
+      age: 33,
+      "likes birds": true, //-->> multiword property
+    };
+
+    //if you want to access multiword properties like "likes birds" you need to use ["quotation marks"]
+
+    alert(user2["likes birds"]);
+
+    let key = "likes birds";
+
+    if(user2[key]){
+      alert("Yess!!");
+    }else {
+      alert("NOpe!");
+    }
+
+    //Compound property. These ones take the code below
+
+    let fruit = prompt("Which fruit do you like the most?", "apple");
+
+    let fruits_bag = {};
+
+    fruits_bag[fruit] = 10;
+
+    alert(`My fruit bag has ${fruits_bag[fruit]} ${fruit}s`);
+
+    //and you can rewrite it like this:
+
+    let fruit2 = prompt("Which fruit do you like the most?", "apple"); //enter pineapple
+
+    let fruits_bag2 = {
+      [fruit2]: 5,
+    };
+
+    alert(fruits_bag2.pineapple); //it can use the value entered as the key
+
+    //more complex compound properties
+
+    let brand = "apple";
+
+    let shoppingKart = {
+      [brand + "Computers"]:10,
+    };
+
+    alert(shoppingKart.appleComputers); //See that apple is now join to Computer = appleComputers
+
+    //Test a property with "in"
+
+    /*If you want to test a property, just put it like this:
+     
+    "key" in object --->>> this will return true or false if that key exists.
+
+    If a key doesn't exist, its value is "undefined"
+     
+     */
+  </script>
+</body>
+</html>
