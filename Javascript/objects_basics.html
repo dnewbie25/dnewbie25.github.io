@@ -21,11 +21,11 @@
 
     alert(user.name); //John
 
-    //Delete key:values properties
+    //=============Delete key:values properties=================
 
     delete user.life
 
-    //You can add properties and multiword properties
+    //============You can add properties and multiword properties============
 
     user2 = {
       name: "Sofia",
@@ -75,15 +75,45 @@
 
     alert(shoppingKart.appleComputers); //See that apple is now join to Computer = appleComputers
 
-    //Test a property with "in"
+    /*=============================
+    
+    Test a property with "in"
 
-    /*If you want to test a property, just put it like this:
+    =================================
+    If you want to test a property, just put it like this:
      
     "key" in object --->>> this will return true or false if that key exists.
 
     If a key doesn't exist, its value is "undefined"
      
      */
+
+
+    /* 
+    ============================
+    for...in loop with objects
+    ============================
+
+
+    It has a special syntax:
+      for (key in object ){
+
+      }
+
+    */
+
+    let users = {
+      user1 : "Dani",
+      user2 : "Sophie",
+      user3 : "Rachel",
+      user4 : "Diana",
+    };
+
+    for (let key in users) { //you lechare a variable, like for (let i = 0...)
+      alert(`The user ${key} is ${users[key]}`);
+    }
+
+
   </script>
 </body>
 </html>
