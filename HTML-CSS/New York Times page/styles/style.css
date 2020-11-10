@@ -54,14 +54,29 @@ NAVIGATION BAR
 
 /*Positioning & separation line*/
 
-nav {
+body {
+  height: fit-content;
+  z-index: 0;
+}
+
+header {
   position: fixed;
+  top: 0;
+  width: 100%;
+  height: 27px;
+  background-color: white;
+  z-index: 2;
+}
+
+nav {
+  /* position: sticky;  */
   width: 100%;
   margin: 10px 0 10px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  background-color: white;
 }
 
 nav::after {
@@ -71,6 +86,8 @@ nav::after {
   height: 2px;
   margin-top: 5px;
 }
+
+
 
 
 /*Hamburger menu*/
@@ -166,3 +183,50 @@ nav::after {
   text-decoration-thickness: 2px;
 }
 
+.top-button:hover {
+  cursor: pointer;
+}
+
+/*============================
+Cover image and figcaptions
+=============================*/
+
+article {
+  position: relative;
+  margin-top: 7%;
+  text-align: center;
+}
+
+article h1 {
+  display: inline-block;
+  width: 650px;
+  font-size: 2.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+  text-align: start;
+}
+
+figure {
+  width: 950px;
+  height: fit-content;
+  text-align: start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article img {
+  margin-top: 50px;
+  width: 950px;
+  height: 600px;
+  z-index: 1;
+  
+}
+
+figcaption {
+  width: 600px;
+}
+
+figcaption span {
+  color: gray;
+}
