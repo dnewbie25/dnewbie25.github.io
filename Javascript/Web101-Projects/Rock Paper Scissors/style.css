@@ -1,0 +1,103 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/*=============
+Main container positioning and images centering
+===============*/
+
+.main-container {
+  height: 50vh;
+  width: 50vw;
+  margin: 25vh auto 25vh auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rock {
+  width: 150px;
+  height: 150px;
+  background-image: url("rock.PNG");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  flex-basis: 1;
+}
+
+.paper {
+  width: 150px;
+  height: 150px;
+  background-image: url("paper.PNG");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  flex-basis: 1;
+}
+
+.scissors {
+  width: 150px;
+  height: 150px;
+  background-image: url("scissors.PNG");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  flex-basis: 1;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  border-color: #ffc600;
+  box-shadow: 0 0 50px #ffc600;
+  cursor: pointer;
+}
+
+/*============
+Score Board
+=============*/
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: baseline;
+  top: 0;
+  height: 90px;
+}
+
+#human,
+#restart {
+  margin-right: 25px;
+}
+
+#human, #restart, #computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#restart button {
+  text-decoration: none;
+  border: none;
+  color: aliceblue;
+  background-color: rgb(20, 185, 185);
+  height: 36px;
+  border-radius: 15px;
+}
