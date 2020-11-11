@@ -93,6 +93,13 @@ Score Board
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#human span,
+#restart span,
+#computer span {
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 #restart button {
   text-decoration: none;
   border: none;
@@ -100,4 +107,12 @@ Score Board
   background-color: rgb(20, 185, 185);
   height: 36px;
   border-radius: 15px;
+}
+
+#result {
+  height: 30px;
+  color: rgb(20, 185, 185);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
 }
