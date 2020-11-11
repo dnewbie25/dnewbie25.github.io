@@ -393,7 +393,7 @@ News Body
 .news-body .subscribe {
   width: 300px;
   height: 40px;
-  margin: 20px auto 20px auto;
+  margin: 20px auto 60px auto;
   text-align: center;
 }
 
@@ -417,5 +417,72 @@ News Body
   width: 100px;
   height: 1px;
   background-color: #333;
-  margin: 15px auto 1px auto;
+  margin: 15px auto 0 auto;
+}
+
+.news-body h3 {
+  text-align: left;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.5rem;
+  font-weight: bolder;
+}
+
+/*=================
+Inflation images header
+==================*/
+
+.inflation-container {
+  width: 950px;
+  height: 100vh;
+  margin: 20px auto 20px auto;
+}
+
+.inflation-container h3, .inflation-container p {
+  text-align: left;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.inflation-container h3 {
+  font-weight: bolder;
+}
+
+/*Grids*/
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 228px);
+  grid-template-rows: repeat(2, fit-content);
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.grid-item figure {
+  width: 220px;
+}
+
+.grid-container .grid-item img {
+  box-sizing: content-box;
+  width: 220px;
+  height: 120px;
+}
+
+.grid-container .grid-item figure figcaption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: black;
+  font-weight: 300;
+  width: 228px;
+}
+
+.grid-item figure figcaption span {
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: .02rem;
 }
