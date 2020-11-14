@@ -26,6 +26,7 @@ Main container positioning and images centering
   width: 150px;
   height: 150px;
   background-image: url("rock.PNG");
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;
@@ -38,6 +39,7 @@ Main container positioning and images centering
   width: 150px;
   height: 150px;
   background-image: url("paper.PNG");
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;
@@ -50,6 +52,7 @@ Main container positioning and images centering
   width: 150px;
   height: 150px;
   background-image: url("scissors.PNG");
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;

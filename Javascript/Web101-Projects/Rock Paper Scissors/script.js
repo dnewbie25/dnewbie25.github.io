@@ -19,99 +19,91 @@ function computerPlay() {
 const rock = document.getElementsByClassName("rock")[0];
 const paper = document.getElementsByClassName("paper")[0];
 const scissors = document.getElementsByClassName("scissors")[0];
+let buttons = document.querySelectorAll(".buttons");
 
+/* buttons.forEach(button => {
+    
+    button.addEventListener("click", (e)=>{
+      
+      singleRound(playerMovement(button), computerPlay);
 
+    });
 
+}); */
 
-let choiceRock =  rock.addEventListener("click", function (event) {
-    console.log("rock");
+/* function playerMovement(buttonClicked) {
+
+  if(buttonClicked.className == "rock buttons"){
+    //singleRound("r", computerPlay());
     return "r";
-  });
-  
-  let choicePaper =  paper.addEventListener("click", function (event) {
-    console.log("par");
+  }else if(buttonClicked.className == "paper buttons"){
+    //singleRound("p", computerPlay());
     return "p";
-  });
-  
-  let choiceScissors =  scissors.addEventListener("click", function (event) {
-    console.log("sco");
-    return "s";
-  });
-  
-
-
-/*
-rock.addEventListener("click", function (event) {
-  return "r";
-});
-
-paper.addEventListener("click", function (event) {
-  return "p";
-});
-
-scissors.addEventListener("click", function (event) {
-  return "s";
-});
- */
-function playerMovement() {
-  if (document.getElementsByClassName("image-container").clicked == true){
-    console.log("rock");
-    return "r";
-  }else if(document.getElementsByClassName("paper").clicked == true){
-    console.log("paper");
-    return "p";
-  }else if(document.getElementsByClassName("scissors").clicked == true){
-    console.log("scissor");
+  }else if(buttonClicked.className == "scissors buttons"){
+    //singleRound("s", computerPlay());
     return "s";
   }
-}
+
+} */
+
+rock.addEventListener("click", function(){
+  singleRound("r", computerPlay());
+});
+
+paper.addEventListener("click", function(){
+  singleRound("p", computerPlay());
+});
+
+scissors.addEventListener("click", function(){
+  singleRound("s", computerPlay());
+});
 
 // One single round of rock paper scissors
-function singleRound(playerSelection, computerSelection){
+function singleRound(playerSelection, computerSelection) {
   // player chooses ROCK
-  if (playerSelection == "r"){
-    switch (computerSelection){
-      case "r": 
+  if (playerSelection == "r") {
+    switch (computerSelection) {
+      case "r":
         console.log("It's a tie");
         return 0;
         break;
-      case "p": 
+      case "p":
         console.log("You loose! Paper beats Rock");
         return 1;
         break;
-      case "s": 
+      case "s":
         console.log("You win! Rock beats Scissors")
         return 2;
         break;
     }
-  // Player chooses PAPER
-  }else if (playerSelection == "p"){
-    switch (computerSelection){
-      case "p": 
+    // Player chooses PAPER
+  } else if (playerSelection == "p") {
+    switch (computerSelection) {
+      case "p":
         console.log("It's a tie");
         return 0;
         break;
-      case "s": 
+      case "s":
         console.log("You loose! Scissors beat Paper");
         return 1;
         break;
-      case "r": 
+      case "r":
         console.log("You win! Paper beats Rock")
         return 2;
         break;
     }
-  // Player chooses SCISSORS
-  }else{
-    switch (computerSelection){
-      case "s": 
+    // Player chooses SCISSORS
+  } else if(playerSelection == "s"){
+    switch (computerSelection) {
+      case "s":
         console.log("It's a tie");
         return 0;
         break;
-      case "r": 
+      case "r":
         console.log("You loose! Rock beats Scissors");
         return 1;
         break;
-      case "p": 
+      case "p":
         console.log("You win! Scissors beat Paper")
         return 2;
         break;
@@ -119,3 +111,5 @@ function singleRound(playerSelection, computerSelection){
   }
 
 }
+
+
