@@ -247,7 +247,7 @@ nav::after {
   height: 100%;
 }
 
-/*HOver effects in the navigation bar*/
+/*Hover effects in the navigation bar*/
 
 .hamburger-menu:hover,
 .button-search:hover {
@@ -274,6 +274,7 @@ article {
   position: relative;
   margin-top: 7%;
   text-align: center;
+  max-height: fit-content;
 }
 
 article h1 {
@@ -362,8 +363,10 @@ News Body
 ==============*/
 
 .news-body {
+  position: relative;
   margin: 20px auto 20px auto;
   width: 600px;
+  max-height: fit-content;
 }
 
 .news-body p {
@@ -376,7 +379,56 @@ News Body
 }
 
 .news-body p a {
-  color: blue;
+  color: #326891;
+  text-decoration: none;
+}
+
+.news-body .second-part {
+  margin: 0 auto 20px auto;
+  width: 600px;
+  height: fit-content ;
+}  
+
+/*YOUTUBE video section. Same news-body class in a different section tag*/
+
+.news-body .youtube-video-section {
+  width: 100%;
+  height: 45vh;
+  margin: 10px 0 60px 0;
+}
+
+.youtube-video {
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-video-section figcaption {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.youtube-video-section #video-title{
+  color: rgba(68, 67, 67, 0.911);
+  font-size: 0.9rem;
+  letter-spacing: .02rem;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: left;
+}
+
+.youtube-video-section #hidden-credit {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+}
+
+.youtube-video-section #video-credits{
+  font-size: 0.8rem;
+  letter-spacing: .02rem;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 10px;
+  text-align: left;
 }
 
 /*Subscribe mini section*/
@@ -433,8 +485,9 @@ Inflation images header
 ==================*/
 
 .inflation-container {
+  position: relative;
   width: 950px;
-  height: 100vh;
+  height: fit-content;
   margin: 20px auto 20px auto;
 }
 
@@ -448,6 +501,25 @@ Inflation images header
 
 .inflation-container h3 {
   font-weight: bolder;
+}
+
+.inflation-container .credits::before{
+  content: "";
+  background-color: gray;
+  width: 5rem;
+  height: 1px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.inflation-container .credits{
+  margin-top: 25px;
+  text-align: left;
+  font-size: 00.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: gray;
 }
 
 /*Grids*/
