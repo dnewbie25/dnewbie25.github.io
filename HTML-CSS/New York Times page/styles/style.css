@@ -558,3 +558,37 @@ Inflation images header
   color: #000000;
   letter-spacing: .02rem;
 }
+
+/*===============
+Telescope images
+================*/
+
+.telescope {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  /* left: calc(50% - 400px);
+  right: calc(50% - 800px); */
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#telescope {
+  width: 100%;
+  height: 500px;
+}
+
+.telescope figcaption{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  line-height: 17px;
+  color: rgba(51, 51, 51, 0.616);
+  font-weight: 500;
+  width: 90%;
+}
+
+.telescope figcaption span{
+  font-size: 0.8rem;
+  margin-left: 10px;
+
+}
