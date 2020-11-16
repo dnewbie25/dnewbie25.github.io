@@ -19,6 +19,11 @@ function computerPlay() {
 const rock = document.getElementsByClassName("rock")[0];
 const paper = document.getElementsByClassName("paper")[0];
 const scissors = document.getElementsByClassName("scissors")[0];
+const result = document.getElementById("result");
+const playerScore = document.getElementById("human-score");
+const computerScore = document.getElementById("computer-score");
+
+const restart = document.getElementById("restart-button");
 let buttons = document.querySelectorAll(".buttons");
 
 /* buttons.forEach(button => {
@@ -46,17 +51,20 @@ let buttons = document.querySelectorAll(".buttons");
 
 } */
 
-rock.addEventListener("click", function(){
-  singleRound("r", computerPlay());
+/* rock.addEventListener("click", function(){
+  value = "r"
 });
 
 paper.addEventListener("click", function(){
-  singleRound("p", computerPlay());
+  value = "p"
 });
 
 scissors.addEventListener("click", function(){
-  singleRound("s", computerPlay());
+  value = "s"
 });
+ */
+
+
 
 // One single round of rock paper scissors
 function singleRound(playerSelection, computerSelection) {
@@ -112,4 +120,42 @@ function singleRound(playerSelection, computerSelection) {
 
 }
 
+//Winner - Looser - Tie
 
+function winnerOrLooser(win, loose){
+  if (win > loose){
+    result.textContent = "You beat the machine!!";
+  }else if (win < loose){
+    result.textContent = "You loose. Shame on you! ";
+  }else{
+    result.textContent = "It's a total tie!";
+  }
+}
+
+
+// Game 5 rounds
+
+ // 5 rounds
+
+ function game(){
+
+  let wins = 0, ties = 0, looses = 0;
+  for (let rounds = 0; rounds < 5; rounds++){
+    let result = singleRound(playerMovement(), computerPlay());
+
+    if (result == 0){
+      ties += 1;
+    }else if (result == 1){
+      looses += 1;
+      computerScore.textContent = looses;
+    }else{
+      wins += 1;
+      playerScore.textContent = wins;
+    }
+
+  }
+
+  winnerOrLooser(wins, looses);
+}
+
+game();
