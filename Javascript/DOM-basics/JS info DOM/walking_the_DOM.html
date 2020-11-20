@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walking the DOM
+  </title>
+</head>
+<body>
+  <div>Begin</div>
+
+  <ul>
+    <li>Information</li>
+  </ul>
+
+  <div>End</div>
+
+
+
+  <script>
+
+    /*=============
+    REALLY IMPORTANT
+    ===============
+    
+    <html> = document.documentElemen
+
+    <body> = document.body
+
+    <head> = document.head 
+
+    */
+    for (let i = 0; i <document.body.childNodes.length-1; i++){ //-1 because the <script> counts as a node too
+      alert(document.body.childNodes[i]);
+    }
+
+    /* The following are always true:
+
+    elem.childNodes[0] === elem.firstChild
+
+    elem.childNodes[elem.childNodes.length - 1] === elem.lastChild
+    */
+
+    for (let node of document.body.childNodes){
+      alert(node)
+    }
+
+    alert(document.body.parentNode === document.documentElement); // parentNode of body is <html>, so it's true
+
+      alert( document.head.nextSibling );; // <meta> is the next sibling (right sibling)
+
+    alert(document.body.previousElementSibling); // <head> is the preivous sibling
+  </script>
+</body>
+</html>
