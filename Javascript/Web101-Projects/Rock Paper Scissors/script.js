@@ -1,5 +1,12 @@
 "use strict";
 
+// counters
+
+let rounds = 0;
+let wins = 0;
+let looses = 0;
+let ties = 0;
+
 //Computer random selection
 
 function computerPlay() {
@@ -16,54 +23,38 @@ function computerPlay() {
 
 //Player move
 
-const rock = document.getElementsByClassName("rock")[0];
-const paper = document.getElementsByClassName("paper")[0];
-const scissors = document.getElementsByClassName("scissors")[0];
+const playerChoice = document.querySelectorAll(".buttons");
+
 const result = document.getElementById("result");
 const playerScore = document.getElementById("human-score");
 const computerScore = document.getElementById("computer-score");
 
 const restart = document.getElementById("restart-button");
-let buttons = document.querySelectorAll(".buttons");
 
-/* buttons.forEach(button => {
-    
-    button.addEventListener("click", (e)=>{
-      
-      singleRound(playerMovement(button), computerPlay);
-
-    });
-
-}); */
-
-/*function playerMovement(buttonClicked) {
-
-  if(buttonClicked.className == "rock buttons"){
-    //singleRound("r", computerPlay());
-    return "r";
-  }else if(buttonClicked.className == "paper buttons"){
-    //singleRound("p", computerPlay());
-    return "p";
-  }else if(buttonClicked.className == "scissors buttons"){
-    //singleRound("s", computerPlay());
-    return "s";
+function playerClick(){
+  if(option.className == "rock buttons"){
+    winnerOrLooser("r", computerPlay());
+  }else if(option.className == "paper buttons"){
+    winnerOrLooser("p", computerPlay());
+  }else if(option.className == "scissors buttons"){
+    winnerOrLooser("s", computerPlay());
   }
+}
 
-} */
-
-rock.addEventListener("click", function(){
-  singleRound("r", computerPlay());
-}); 
-
-paper.addEventListener("click", function(){
-  singleRound("p", computerPlay());
+playerChoice.forEach(option => {
+  option.addEventListener("click", function (){
+    if(option.className == "rock buttons"){
+      winnerOrLooser("r", computerPlay());
+    }else if(option.className == "paper buttons"){
+      winnerOrLooser("p", computerPlay());
+    }else if(option.className == "scissors buttons"){
+      winnerOrLooser("s", computerPlay());
+    }
+  });
 });
 
-scissors.addEventListener("click", function(){
-  singleRound("s", computerPlay());
-});
- 
 // One single round of rock paper scissors
+
 function singleRound(playerSelection, computerSelection) {
   // player chooses ROCK
   if (playerSelection == "r") {
@@ -117,29 +108,48 @@ function singleRound(playerSelection, computerSelection) {
 
 }
 
-//Winner - Looser - Tie
+// 5 rounds to determine winner
 
-/* function winnerOrLooser(win, loose){
-  if (win > loose){
-    result.textContent = "You beat the machine!!";
-  }else if (win < loose){
-    result.textContent = "You loose. Shame on you! ";
-  }else{
-    result.textContent = "It's a total tie!";
-  }
+function winnerOrLooser(playerOption, computer){
+  
+    if (singleRound(playerOption, computer) === 0){
+      ties += 1;
+    }else if (singleRound(playerOption, computer) === 1){
+      looses += 1;
+      computerScore.textContent = looses;
+    }else if(singleRound(playerOption, computer) === 2){
+      wins += 1;
+      playerScore.textContent = wins;
+    }
+    rounds += 1;
+    
+    if (rounds == 5){
+      if(wins > looses){
+        result.textContent = "You win!!";
+      }else if(looses > wins){
+        result.textContent = "You loose :(";
+      }else{
+        result.textContent = "It was a tie";
+      }
+    }
+
 }
- */
 
- function winnerOrLooser(value){
-   if(value === 2){//win
-      return "win";
-   }else if(value === 1){//lose
-     return "lose";
-   }else{ //tie
-     return "tie";
-   }
- }
+// Restart
 
- winnerOrLooser()
+restart.addEventListener("click", ()=>{
+  window.location.reload();
+});
+
+if(rounds === 5){
+  playerChoice.forEach(option =>{
+    option.addEventListener("click", function (){
+      return false;
+    });
+  });
+}
+
+
+
 
 
