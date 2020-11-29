@@ -126,10 +126,13 @@ function winnerOrLooser(playerOption, computer){
     if (rounds == 5){
       if(wins > looses){
         result.textContent = "You win!!";
+        
       }else if(looses > wins){
         result.textContent = "You loose :(";
+        
       }else{
         result.textContent = "It was a tie";
+        
       }
     }
 
@@ -141,13 +144,9 @@ restart.addEventListener("click", ()=>{
   window.location.reload();
 });
 
-if(rounds === 5){
-  playerChoice.forEach(option =>{
-    option.addEventListener("click", function (){
-      return false;
-    });
-  });
-}
+//remove click events
+
+if (rounds === 5) {};
 
 
 

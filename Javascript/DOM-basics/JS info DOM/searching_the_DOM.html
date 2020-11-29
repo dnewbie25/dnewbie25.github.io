@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searching: getElement & querySelector</title>
+</head>
+<body>
+  <div id="elem">
+    <div id="elem-content">Element</div>
+  </div>
+
+  <ul>
+    <li>The</li>
+    <li>test</li>
+  </ul>
+  <ul>
+    <li>has</li>
+    <li>passed</li>
+  </ul>
+
+
+  <script>
+    //getElementbyId ---->> Gets element with an id 
+
+    let idElement = document.getElementById('elem');
+
+    //Change background color of that id element
+
+    idElement.style.backgroundColor = "lightgray";
+
+
+    // querySelectorAll ---->> returns all the elements in the inside the given element that match the given value
+
+    let listElements = document.querySelectorAll('ul > li:last-child');
+
+    for (let eachElem of listElements){
+      alert(eachElem.innerHTML);
+    }
+
+    //querySelector ---->> returns the first match of the given value. In other words, it's like querySelectorAll[0]
+
+    // getElementsBy* ---->> in plural, it can be for class names, tags or names
+
+    let divs = document.getElementsByTagName('div');
+
+    for (let eachDiv in divs){
+      alert(eachDiv);
+    }
+
+
+  </script>
+</body>
+</html>
