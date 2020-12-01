@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="queryStyle.css" rel="stylesheet" />
-    <title>Nodes in DOM</title>
+    <title>Events</title>
   </head>
   <body>
   	<div id="wrapper">
@@ -44,16 +44,16 @@
 
     </div>
     <script>
+      let buttons = document.querySelectorAll('#book-list .delete'); // select the buttons with class .delete
 
-      const banner = document.querySelector("#page-banner");
-      console.log("#page-banner node type is: ", banner.nodeType);
-      console.log("#page-banner node type is: ", banner.nodeName);
+      //buttons will be a colletion, if we need an event listener in each element we need to create an array
 
-      console.log("#page-banner node type is: ", banner.hasChildNodes());
-
-      const clonedBanner = banner.cloneNode(true); //true allows to clone all nested elements inside the element cloned. You can see them in the childNodes dropdown in DevTools
-      console.log(clonedBanner);
-
+      Array.from(buttons).forEach(function(btn){
+        btn.addEventListener("click", function(e){
+          const li = e.target.parentElement;
+          li.parentNode.removeChild(li);
+        });
+      });
     </script>
   </body>
 </html>
