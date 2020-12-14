@@ -1,3 +1,5 @@
+"use strict";
+
 // Function Declaration. Works everywhere in the code
 function greet(){
   console.log("Hello World!");
@@ -70,3 +72,29 @@ console.log(greet3());
 
 /* Callback is when you pass a function as an argument to another function */
 
+console.log("Callback functions star now!!");
+
+const myCallBack = (callbackFunction) => {
+  let value = 50;
+  callbackFunction(value);
+};
+
+myCallBack(function(value){
+  console.log(value);
+});
+
+//forEach method
+
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+people.forEach(function(element, index){ //parameters are element & index
+  console.log(`Item ${index + 1}: ${element}`);
+});
+
+//Another way to use forEach is with arroiw functions, like this
+
+const logPerson = (person, index) => {
+  console.log(`Person #${index + 1} is ${person}`)
+};
+
+people.forEach(logPerson);
